@@ -291,6 +291,7 @@ void FeedCoordinator::FeedCompleted(FeedDownloader* feedDownloader)
 		m_activeDownloads.erase(std::find(m_activeDownloads.begin(), m_activeDownloads.end(), feedDownloader));
 	}
 
+	feedInfo->SetLastUpdate(Util::CurrentTime());
 	if (statusOK)
 	{
 		if (!feedInfo->GetPreview())
